@@ -17,9 +17,16 @@
           <div class="d-flex flex-row">
             <div class="d-flex flex-column" style="hoverflow:auto;">
               <div style="hoverflow:auto" class="">
+                @if(Route::has('login'))
                 <?php
                   $users = Auth::user()->get();
                 ?>
+                @else
+                <?php
+                  $user = "VOus n'etes pas connecté"
+                ?>
+                @endif
+
                 <h4>Les utilisateurs sont affichés au format : <code>{nom, prénom}</code></h4>
                 <ul>
                   @foreach($users as $user)

@@ -18,25 +18,19 @@
             <div class="d-flex flex-column" style="hoverflow:auto;">
               <div style="hoverflow:auto" class="">
                 <?php
+                Use App\User;
+                Use App\Skills;
+                $me = Auth::user()->get();
+                $current_user = User::find(2)->name;
+                $skills = User::find(2)->Skills[0]->name;
+                $level = User::find(2)->Skills[0]->pivot->level;
 
-                $current_user = Auth::user()->id;
-
-                $skill = DB::table('users')
-                ->join('skills_user', function ($join) {
-                  $join->on('users.id', '=', 'skills_user.user_id');
-                })
-                ->join('skills', function ($join2) {
-                  $join2->on('skills_user.skills_id', '=', 'skills.id');
-                })
-                ->select('skills.name', 'skills_user.level')
-                ->where('users.id', '=', $current_user)
-                ->get();
+                // $user = Auth::user()->get();
+                // $skills = $user->skills;
                 ?>
 
-                @foreach($skill as $skills)
-                <li>{{$test}} {{$skills->name}} {{$skills->level}}</li>
-                @endforeach
 
+                {{$current_user}} - {{$skills}} : {{$level}}
               </div>
             </div>
           </div>

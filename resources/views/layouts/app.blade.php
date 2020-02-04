@@ -60,6 +60,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{route('home')}}">Votre profile</a>
                                     <a class="dropdown-item" target="_blank" href="https://laravel.com/docs">Doc Laravel</a>
                                     <a class="dropdown-item" href="{{route('users')}}">Afficher les utilisateurs</a>
                                     <a class="dropdown-item" href="{{route('skills')}}">Afficher les compétences</a>

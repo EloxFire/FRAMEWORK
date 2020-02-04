@@ -15,29 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/skills', function () {
+    return view('skills.skills');
+})->name('skills');
+
+Route::get('/addSkills', function () {
+    return view('skills.addSkills');
+})->name('addSkills');
+
+Route::get('/deleteSkills', function () {
+    return view('skills.deleteSkills');
+})->name('deleteSkills');
+
+Route::get('/modifSkills', function () {
+    return view('skills.modifSkills');
+})->name('modifSkills');
+
 Route::get('/users', function () {
     return view('users');
 })->name('users');
 
-Route::get('/skills', function () {
-    return view('skills');
-})->name('skills');
 
-Route::get('/addSkills', function () {
-    return view('addSkills');
-})->name('addSkills');
-
-Route::get('/modifSkills', function () {
-    return view('modifSkills');
-})->name('modifSkills');
-
-Route::get('/deleteSkills', function () {
-    return view('deleteSkills');
-})->name('deleteSkills');
-
-Route::get('/adding', function () {
-    return view('adding');
-})->name('adding');
-
+// Route::resource('skills', 'SkillUserController');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
