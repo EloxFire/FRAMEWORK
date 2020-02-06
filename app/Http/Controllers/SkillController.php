@@ -37,16 +37,18 @@ class SkillController extends Controller
     {
       // VERIF QUE LES CHAMPS SOIENT BIEN REMPLIS
         $this->validate($request, [
-          'comp_name' => 'required',
-          'comp_level' => 'required'
+          'name' => 'required',
+          'description' => 'required',
+          'level' => 'required'
         ]);
         // CREATION D'UN OBJET Model
         $competence = new Skill([
-          'comp_name' => $request->get('comp_name'),
-          'comp_level' => $request->get('comp_level')
+          'name' => $request->get('name'),
+          'description' => $request->get('description'),
+          'level' => $request->get('level')
         ]);
         $competence->save();
-        return redirect()->route('skills.addSkills')->with('success', 'Compétence Ajoutée');
+        return redirect()->route('skills.skillsManager')->with('success', 'Compétence Ajoutée');
     }
 
     /**

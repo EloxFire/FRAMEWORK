@@ -101,9 +101,9 @@
                         <div class="links">
                           <a class="dropdown-item" href="{{route('users')}}">Afficher les utilisateurs</a>
                           <a class="dropdown-item" href="{{route('skills')}}">Afficher les compétences</a>
-                          <a class="dropdown-item" href="{{route('addSkills')}}">Ajouter une compétence</a>
+                          {{-- <a class="dropdown-item" href="{{route('addSkills')}}">Ajouter une compétence</a>
                           <a class="dropdown-item" href="{{route('modifSkills')}}">Modifier une compétence</a>
-                          <a class="dropdown-item" href="{{route('deleteSkills')}}">Suprimer une compétence</a>
+                          <a class="dropdown-item" href="{{route('deleteSkills')}}">Suprimer une compétence</a>--}}
                         </div>
                         @else
                         <h6>Bienvenue, connectez-vous !</h6>

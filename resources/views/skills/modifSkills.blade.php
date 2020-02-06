@@ -17,12 +17,6 @@
           <div class="d-flex flex-row">
             <div class="d-flex flex-column col-6">
               <form>
-                <?php
-                  $comp_name = DB::table('skills')
-                  ->select('name')
-                  ->get();
-                ?>
-
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
                   <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
