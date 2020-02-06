@@ -37,5 +37,9 @@ Route::get('/users', function () {
 
 
 // Route::resource('skills', 'SkillUserController');
+Route::resource('skills', 'SkillController');
+// Route::get('/skills', 'SkillController@index')->name('skills');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Routes de mes controllers

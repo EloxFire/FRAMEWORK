@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Skills extends Model
 {
+
+  protected $fillable = ['comp_name', 'comp_level'];
   /**
   * Récupère les utilisateurs possédant cette compétences.
   */
