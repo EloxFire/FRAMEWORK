@@ -7,92 +7,92 @@ use App\Skills;
 
 class SkillController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  /**
+  * Display a listing of the resource.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function index(){
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('skills.addSkills');
-    }
+  /**
+  * Show the form for creating a new resource.
+  *
+  * @return \Illuminate\Http\Response
+  */
+  public function create(){
+    // return view('skills.addSkills');
+    // VERIF QUE LES CHAMPS SOIENT BIEN REMPLIS
+    $this->validate($request, [
+      'name' => 'required',
+      'description' => 'required',
+      'level' => 'required'
+    ]);
+    // CREATION D'UN OBJET Model
+    $competence = new Skill([
+      'name' => $request->get('name'),
+      'description' => $request->get('description'),
+      'level' => $request->get('level')
+    ]);
+    $competence->save();
+    return redirect()->route('home')->with('success', 'Compétence Ajoutée');
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-      // VERIF QUE LES CHAMPS SOIENT BIEN REMPLIS
-        $this->validate($request, [
-          'name' => 'required',
-          'description' => 'required',
-          'level' => 'required'
-        ]);
-        // CREATION D'UN OBJET Model
-        $competence = new Skill([
-          'name' => $request->get('name'),
-          'description' => $request->get('description'),
-          'level' => $request->get('level')
-        ]);
-        $competence->save();
-        return redirect()->route('skills.skillsManager')->with('success', 'Compétence Ajoutée');
-    }
+  /**
+  * Store a newly created resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function store(Request $request){
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+  /**
+  * Display the specified resource.
+  *
+  * @param  int  $id
+  * @return \Illuminate\Http\Response
+  */
+  public function show($id)
+  {
+    //
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+  /**
+  * Show the form for editing the specified resource.
+  *
+  * @param  int  $id
+  * @return \Illuminate\Http\Response
+  */
+  public function edit($id)
+  {
+    //
+  }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  /**
+  * Update the specified resource in storage.
+  *
+  * @param  \Illuminate\Http\Request  $request
+  * @param  int  $id
+  * @return \Illuminate\Http\Response
+  */
+  // public function update(Request $request, $id)
+  // {
+  //   //$request->id
+  // }
+  public function update(Request $request){
+    return redirect()->route('skills.modifSkills')->with('success', 'Compétence Modifiée');
+  }
+
+  /**
+  * Remove the specified resource from storage.
+  *
+  * @param  int  $id
+  * @return \Illuminate\Http\Response
+  */
+  public function destroy($id)
+  {
+    //
+  }
 }

@@ -16,7 +16,9 @@
 
           <div class="d-flex flex-row">
             <div class="d-flex flex-column col-6">
-              <form>
+              <form class="mb-5" method="post" action="{{route('skill.update')}}">
+                {{csrf_field()}}
+                @method('PUT')
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
                   <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">

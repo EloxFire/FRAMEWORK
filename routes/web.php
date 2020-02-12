@@ -19,19 +19,23 @@ Route::get('/skills', function () {
     return view('skills.skills');
 })->name('skills');
 
-Route::get('/skillsManager', function () {
-    return view('skills.skillsManager');
-})->name('skillsManager');
+Route::get('/addSkills', function () {
+    return view('skills.addSkills');
+})->name('addSkills');
+
+Route::get('/deleteSkills', function () {
+    return view('skills.deleteSkills');
+})->name('deleteSkills');
+
+Route::get('/modifSkills', function () {
+    return view('skills.modifSkills');
+})->name('modifSkills');
 
 Route::get('/users', function () {
     return view('users');
 })->name('users');
 
 
-// Route::resource('skills', 'SkillUserController');
 Route::resource('skill', 'SkillController');
-// Route::get('/skills', 'SkillController@index')->name('skills');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-
-// Routes de mes controllers

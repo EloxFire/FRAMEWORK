@@ -16,7 +16,8 @@
 
           <div class="d-flex flex-row">
             <div class="d-flex flex-column col-6">
-              <form>
+              <form method="post" action="{{route('skill.destroy')}}">
+                @method('DELETE')
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
                   <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">

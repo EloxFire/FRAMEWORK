@@ -49,31 +49,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Ajouter la compétence</button>
               </form>
-
-              <form class="mb-5">
-                <div class="form-group">
-                  <label for="name">Nom de la compétence</label>
-                  <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
-
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="level">Niveau de la compétence</label>
-                  <input type="number" class="form-control" id="level" placeholder="Niveau de la compétence">
-                </div>
-                <button type="submit" class="btn btn-primary">Modifier le niveau de la compétence</button>
-              </form>
-
-              <form>
-                <div class="form-group">
-                  <label for="name">Nom de la compétence</label>
-                  <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
-
-                  </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Suprimer la compétence</button>
-              </form>
             </div>
           </div>
         </div>
