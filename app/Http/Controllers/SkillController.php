@@ -21,21 +21,7 @@ class SkillController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function create(){
-    // return view('skills.addSkills');
-    // VERIF QUE LES CHAMPS SOIENT BIEN REMPLIS
-    $this->validate($request, [
-      'name' => 'required',
-      'description' => 'required',
-      'level' => 'required'
-    ]);
-    // CREATION D'UN OBJET Model
-    $competence = new Skill([
-      'name' => $request->get('name'),
-      'description' => $request->get('description'),
-      'level' => $request->get('level')
-    ]);
-    $competence->save();
-    return redirect()->route('home')->with('success', 'Compétence Ajoutée');
+    return view('skills.addSkills');
   }
 
   /**
@@ -45,7 +31,19 @@ class SkillController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function store(Request $request){
+    // VERIF QUE LES CHAMPS SOIENT BIEN REMPLIS
+    $this->validate($request, [
+      'name' => 'required',
+      'description' => 'required'
+    ]);
+    // CREATION D'UN OBJET Model
+    Skills::create([
+      'name' => $request->name,
+      'description' => $request->get('description'),
+      'logo' => $request->get('logo')
+    ]);
 
+    return redirect()->route('home')->with('success', 'Compétence Ajoutée');
   }
 
   /**
@@ -91,8 +89,17 @@ class SkillController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function destroy($id)
-  {
-    //
+  public function destroy($id){
+    $this->validate($request, [
+      'name' => 'required'
+    ]);
+    // Destroy de la competence
+    Skills::destroy([
+      'name' => $request->name,
+      'description' => $request->get('description'),
+      'logo' => $request->get('logo')
+    ]);
+
+    return redirect()->route('skills')->with('success', 'Compétence detruite !');
   }
 }

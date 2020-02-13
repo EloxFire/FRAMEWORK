@@ -21,7 +21,7 @@
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
                   <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
-                    @foreach($comp_name as $name)
+                    @foreach($name as $name)
                     <option value="{{$name->name}}">{{$name->name}}</option>
                     @endforeach
                   </select>

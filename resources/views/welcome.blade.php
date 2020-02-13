@@ -99,8 +99,8 @@
         <a class="dropdown-item" target="_blank" href="https://laravel.com/docs">Doc Laravel</a>
       </div>
       <div class="links">
-        <a class="dropdown-item" href="{{route('users')}}">Afficher les utilisateurs</a>
-        <a class="dropdown-item" href="{{route('skills')}}">Afficher les compétences</a>
+        <a class="dropdown-item" href="{{route('displayUsers')}}">Afficher les utilisateurs</a>
+        <a class="dropdown-item" href="{{route('displaySkills')}}">Afficher les compétences</a>
         <a class="dropdown-item" href="{{route('addSkills')}}">Ajouter une compétence</a>
         <a class="dropdown-item" href="{{route('modifSkills')}}">Modifier une compétence</a>
         <a class="dropdown-item" href="{{route('deleteSkills')}}">Suprimer une compétence</a>

@@ -31,22 +31,25 @@
                 <p>{{\Sesssion::get('success')}}</p>
               </div>
               @endif
-              <form class="mb-5" method="post" action="{{route('skill.create')}}">
-                {{csrf_field()}}
+              <form class="mb-5" method="POST" action="{{route('skill.store')}}">
+                @csrf
+
+
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
-                  <input type="test" class="form-control" id="name" name="name" placeholder="Nom de la compétence">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la compétence">
                 </div>
 
                 <div class="form-group">
-                  <label for="name">Description de la compétence</label>
-                  <input type="test" class="form-control" id="description" name="description" placeholder="Description de la compétence">
+                  <label for="description">Description de la compétence</label>
+                  <input type="text" class="form-control" id="description" name="description" placeholder="Description de la compétence">
                 </div>
 
                 <div class="form-group">
-                  <label for="level">Niveau de la compétence</label>
-                  <input type="number" class="form-control" id="level" name="level" placeholder="Niveau de la compétence">
+                  <label for="logo">Logo de la compétence</label>
+                  <input type="text" class="form-control" id="description" name="logo" placeholder="Logo de la compétence">
                 </div>
+                
                 <button type="submit" class="btn btn-primary">Ajouter la compétence</button>
               </form>
             </div>

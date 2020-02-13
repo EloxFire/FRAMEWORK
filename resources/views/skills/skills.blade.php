@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header"><h3>Voici la liste des compétences des utilisateurs</h3></div>
+        <div class="card-header"><h3>Voici la liste des compétences disponibbles</h3></div>
 
         <div class="card-body">
           @if (session('status'))
@@ -21,16 +21,16 @@
                 Use App\User;
                 Use App\Skills;
                 $me = Auth::user()->get();
-                $current_user = User::find(2)->name;
-                $skills = User::find(2)->Skills[0]->name;
-                $level = User::find(2)->Skills[0]->pivot->level;
 
-                // $user = Auth::user()->get();
-                // $skills = $user->skills;
+                $nbrSkills = Skills::count();
+                $skills = Skills::get();
                 ?>
 
-
-                {{$current_user}} - {{$skills}} : {{$level}}
+                <h4>Nombre de compétences total : {{$nbrSkills}}</h4>
+                <h4>Liste détaillée :</h4>
+                @foreach($skills as $s)
+                <li>{{$s->name}}</li>
+                @endforeach
               </div>
             </div>
           </div>

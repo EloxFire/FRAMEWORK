@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/skills', function () {
+Route::get('/displaySkills', function () {
     return view('skills.skills');
-})->name('skills');
+})->name('displaySkills');
 
 Route::get('/addSkills', function () {
     return view('skills.addSkills');
@@ -31,11 +31,12 @@ Route::get('/modifSkills', function () {
     return view('skills.modifSkills');
 })->name('modifSkills');
 
-Route::get('/users', function () {
-    return view('users');
-})->name('users');
+Route::get('/displayUsers', function () {
+    return view('display.users');
+})->name('displayUsers');
 
 
-Route::resource('skill', 'SkillController');
+Route::post('newSkill', 'SkillController@store')->name('skill.store');
+Route::delete('removeSkill', 'SkillController@destroy')->name('skill.destroy');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
