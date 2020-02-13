@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header"><h3>Ici, vous pouvez modifier des compétences</h3></div>
+        <div class="card-header"><h3>Ici, vous pouvez modifier des compétences générales</h3></div>
 
         <div class="card-body">
           @if (session('status'))
@@ -17,12 +17,16 @@
           <div class="d-flex flex-row">
             <div class="d-flex flex-column col-6">
               <form class="mb-5" method="post" action="{{route('skill.update')}}">
-                {{csrf_field()}}
+                @csrf
                 @method('PUT')
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
                   <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
-                    @foreach($comp_name as $name)
+                    <?php
+                    use APp\Skills;
+                    $name = Skills::get();
+                    ?>
+                    @foreach($name as $name)
                     <option value="{{$name->name}}">{{$name->name}}</option>
                     @endforeach
                   </select>

@@ -95,9 +95,7 @@ class SkillController extends Controller
     ]);
     // Destroy de la competence
     Skills::destroy([
-      'name' => $request->name,
-      'description' => $request->get('description'),
-      'logo' => $request->get('logo')
+      'name' => $request->name
     ]);
 
     return redirect()->route('skills')->with('success', 'Compétence detruite !');

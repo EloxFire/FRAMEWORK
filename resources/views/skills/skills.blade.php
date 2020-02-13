@@ -20,7 +20,6 @@
                 <?php
                 Use App\User;
                 Use App\Skills;
-                $me = Auth::user()->get();
 
                 $nbrSkills = Skills::count();
                 $skills = Skills::get();

@@ -20,7 +20,12 @@
                 @method('DELETE')
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
-                  <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
+                  <select class="form-control" name="name" placeholder="Nom de la compétence">
+
+                    <?php
+                    use App\Skills;
+                    $name = Skills::get();
+                    ?>
                     @foreach($name as $name)
                     <option value="{{$name->name}}">{{$name->name}}</option>
                     @endforeach
