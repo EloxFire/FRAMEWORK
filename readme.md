@@ -12,12 +12,20 @@ ___
 #### Enzo Avagliano - 2020
 
 ## Disponible & Utilisable :
-- Ajout de compétences générales
-- Suppression de compétences générales
-- Affichage des compétences générales
+- Enregistrement
+- Connexion
+- CRUD de base :
+  - Ajout de compétences générales (***Create***)
+  - Affichage des compétences générales (***Read***)
+  - Modification de compétences générales (***Update***)
+  - Suppression de compétences générales (***Delete***)
+
 
 ## En développement :
-- Modification de compétences générales
 - Ajout de compétences  un utilisateur spécifique
 - Ajout utilisateur administrateur
 - Policies
+
+___
+##### PostScript :
+- Projet non terminé dû a mon Job étudiant. J'ai du me motiver a avancer un maximum avant le rendu en rentrant a 20h depuis samedi 15 février.
