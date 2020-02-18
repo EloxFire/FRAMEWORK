@@ -13,6 +13,7 @@ class SkillController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function index(){
+    $skills = Skills::latest();
   }
 
   /**
@@ -43,7 +44,7 @@ class SkillController extends Controller
       'logo' => $request->get('logo')
     ]);
 
-    return redirect()->route('home')->with('success', 'Compétence Ajoutée');
+    return redirect()->route('addSkills')->with('success', 'Compétence Ajoutée');
   }
 
   /**
@@ -83,7 +84,15 @@ class SkillController extends Controller
   //   //$request->id
   // }
   public function update(Request $request){
-    return redirect()->route('skills.modifSkills')->with('success', 'Compétence Modifiée');
+    $request->validate([
+        'name' => 'required',
+        'description' => 'required',
+        'logo' => 'required',
+      ]);
+
+      $skill->update($request->all());
+
+      return redirect()->route('home')->with('success', 'Skills udpated');
   }
 
   /**
@@ -92,15 +101,15 @@ class SkillController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function destroy($id){
+  public function destroy(Request $request){
     $this->validate($request, [
       'name' => 'required'
     ]);
-    // Destroy de la competence
-    Skills::destroy([
-      'name' => $request->name
-    ]);
 
-    return redirect()->route('skills')->with('success', 'Compétence detruite !');
+    $name = $request->name;
+
+    Skills::where('name', $name)->delete();
+
+    return redirect()->route('home');
   }
 }

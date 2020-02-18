@@ -23,7 +23,7 @@
                   <label for="name">Nom de la compétence</label>
                   <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
                     <?php
-                    use APp\Skills;
+                    use App\Skills;
                     $name = Skills::get();
                     ?>
                     @foreach($name as $name)

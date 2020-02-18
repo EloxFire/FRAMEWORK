@@ -17,6 +17,7 @@
           <div class="d-flex flex-row">
             <div class="d-flex flex-column col-6">
               <form method="post" action="{{route('skill.destroy')}}">
+                @csrf
                 @method('DELETE')
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>

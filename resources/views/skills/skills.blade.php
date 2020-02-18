@@ -25,11 +25,25 @@
                 $skills = Skills::get();
                 ?>
 
-                <h4>Nombre de compétences total : {{$nbrSkills}}</h4>
-                <h4>Liste détaillée :</h4>
-                @foreach($skills as $s)
-                <li>{{$s->name}}</li>
-                @endforeach
+                <ul class="list-group mb-2">
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Compétences totales :
+                    <span class="badge badge-primary badge-pill">{{ $nbrSkills }}</span>
+                  </li>
+                </ul>
+
+
+                <div class="d-flex flex-wrap">
+                  @foreach($skills as $s)
+                  <div class="card m-3" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $s->name}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{ $s->logo }}</h6>
+                      <p class="card-text">{{ $s->description }}</p>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
               </div>
             </div>
           </div>
