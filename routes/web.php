@@ -38,6 +38,6 @@ Route::get('/displayUsers', function () {
 
 Route::post('newSkill', 'SkillController@store')->name('skill.store');
 Route::delete('removeSkill', 'SkillController@destroy')->name('skill.destroy');
-Route::update('changeSkill', 'SkillController@update')->name('skill.update');
+// Route::update('changeSkill', 'SkillController@update')->name('skill.update');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
