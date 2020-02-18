@@ -85,18 +85,15 @@ class SkillController extends Controller
   // }
   public function update(Request $request){
     $request->validate([
-        'name' => 'required',
-        'description' => 'required',
-        'logo' => 'nullable',
-      ]);
+      'name' => 'required',
+      'description' => 'required',
+      'logo' => 'nullable'
+    ]);
 
-      $name = $request->name;
-      $newDesc = $request->description;
-      $newLogo = $request->logo;
+    $name = $request->name;
+    Skills::where('name', $name)->update(['description' => $request->description, 'logo' => $request->logo]);
 
-
-
-      return redirect()->route('modifSkills')->with('success', 'Compétence modifiée !');
+    return redirect()->route('modifSkills')->with('success', 'Compétence modifiée !');
   }
 
   /**

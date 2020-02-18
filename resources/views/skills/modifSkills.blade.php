@@ -16,6 +16,11 @@
 
           <div class="d-flex flex-row">
             <div class="d-flex flex-column col-6">
+              @if(\Session::has('success'))
+              <div class="alert alert-success">
+                <p>{{\Session::get('success')}}</p>
+              </div>
+              @endif
               <form class="mb-5" method="post" action="{{route('skill.update')}}">
                 @csrf
                 @method('POST')
@@ -32,14 +37,16 @@
                   </select>
                 </div>
 
+
+
                 <div class="form-group">
                   <label for="level">Nouvelle description</label>
-                  <input type="text" class="form-control" id="description" placeholder="Nouvelle description de la compétence">
+                  <input type="text" class="form-control" name="description" id="description" placeholder="Nouvelle description de la compétence">
                 </div>
 
                 <div class="form-group">
                   <label for="level">Nouveau logo de la compétence</label>
-                  <input type="text" class="form-control" id="logo" placeholder="Nouveau logo">
+                  <input type="text" class="form-control" name="logo" id="logo" placeholder="Nouveau logo">
                 </div>
                 <button type="submit" class="btn btn-primary">Modifier la compétence</button>
               </form>
