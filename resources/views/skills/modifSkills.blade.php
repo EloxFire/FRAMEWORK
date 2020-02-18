@@ -18,7 +18,7 @@
             <div class="d-flex flex-column col-6">
               <form class="mb-5" method="post" action="{{route('skill.update')}}">
                 @csrf
-                @method('PUT')
+                @method('POST')
                 <div class="form-group">
                   <label for="name">Nom de la compétence</label>
                   <select class="form-control" name="name" id="name" placeholder="Nom de la compétence">
@@ -33,10 +33,15 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="level">Niveau de la compétence</label>
-                  <input type="number" class="form-control" id="level" placeholder="Niveau de la compétence">
+                  <label for="level">Nouvelle description</label>
+                  <input type="text" class="form-control" id="description" placeholder="Nouvelle description de la compétence">
                 </div>
-                <button type="submit" class="btn btn-primary">Modifier le niveau de la compétence</button>
+
+                <div class="form-group">
+                  <label for="level">Nouveau logo de la compétence</label>
+                  <input type="text" class="form-control" id="logo" placeholder="Nouveau logo">
+                </div>
+                <button type="submit" class="btn btn-primary">Modifier la compétence</button>
               </form>
             </div>
           </div>

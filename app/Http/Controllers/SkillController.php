@@ -44,7 +44,7 @@ class SkillController extends Controller
       'logo' => $request->get('logo')
     ]);
 
-    return redirect()->route('addSkills')->with('success', 'Compétence Ajoutée');
+    return redirect()->route('addSkills')->with('success', 'Compétence ajoutée !');
   }
 
   /**
@@ -87,12 +87,16 @@ class SkillController extends Controller
     $request->validate([
         'name' => 'required',
         'description' => 'required',
-        'logo' => 'required',
+        'logo' => 'nullable',
       ]);
 
-      $skill->update($request->all());
+      $name = $request->name;
+      $newDesc = $request->description;
+      $newLogo = $request->logo;
 
-      return redirect()->route('home')->with('success', 'Skills udpated');
+
+
+      return redirect()->route('modifSkills')->with('success', 'Compétence modifiée !');
   }
 
   /**
@@ -110,6 +114,6 @@ class SkillController extends Controller
 
     Skills::where('name', $name)->delete();
 
-    return redirect()->route('home');
+    return redirect()->route('deleteSkills')->with('success', 'Compétence suprimée !');
   }
 }

@@ -13,4 +13,11 @@ ___
 
 ## Disponible & Utilisable :
 - Ajout de compétences générales
+- Suppression de compétences générales
 - Affichage des compétences générales
+
+## En développement :
+- Modification de compétences générales
+- Ajout de compétences  un utilisateur spécifique
+- Ajout utilisateur administrateur
+- Policies

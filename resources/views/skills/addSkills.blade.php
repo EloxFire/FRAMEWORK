@@ -28,7 +28,7 @@
 
               @if(\Session::has('success'))
               <div class="alert alert-success">
-                <p>{{\Sesssion::get('success')}}</p>
+                <p>{{\Session::get('success')}}</p>
               </div>
               @endif
               <form class="mb-5" method="POST" action="{{route('skill.store')}}">
@@ -49,7 +49,7 @@
                   <label for="logo">Logo de la compétence</label>
                   <input type="text" class="form-control" id="description" name="logo" placeholder="Logo de la compétence">
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary">Ajouter la compétence</button>
               </form>
             </div>

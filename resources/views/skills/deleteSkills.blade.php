@@ -16,6 +16,11 @@
 
           <div class="d-flex flex-row">
             <div class="d-flex flex-column col-6">
+              @if(\Session::has('success'))
+              <div class="alert alert-success">
+                <p>{{\Session::get('success')}}</p>
+              </div>
+              @endif
               <form method="post" action="{{route('skill.destroy')}}">
                 @csrf
                 @method('DELETE')

@@ -65,6 +65,7 @@
                                     <a class="dropdown-item" href="{{route('displayUsers')}}">Afficher les utilisateurs</a>
                                     <a class="dropdown-item" href="{{route('displaySkills')}}">Afficher les compétences</a>
                                     <a class="dropdown-item" href="{{route('addSkills')}}">Ajouter une compétence</a>
+                                    <a class="dropdown-item" href="{{route('modifSkills')}}">Modifier une compétence</a>
                                     <a class="dropdown-item" href="{{route('deleteSkills')}}">Suprimer une compétence</a>
 
 
